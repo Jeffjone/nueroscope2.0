@@ -858,6 +858,7 @@ strong {
   margin-bottom: 20px;
 }
 
+/* Original term-card layout (image below the text) */
 .term-card {
   border: 1px solid var(--border-color);
   background-color: var(--white-color);
@@ -875,21 +876,46 @@ strong {
 
 .term-card-image-container {
   display: flex; /* Allow layout control for the image */
-  align-items: flex-start; /* Align image to the top */
-  gap: 20px; /* Space between the image and optional text if added later */
+  align-items: left; /* Align image to the center */
+  justify-content: left; /* Center image horizontally */
+  margin-bottom: 20px;
 }
 
 .term-card-image {
-  max-width: 40%; /* Allow image to scale */
+  max-width: 30%; /* Allow image to scale */
   height: auto; /* Maintain aspect ratio */
-  margin-top: -10px;
   border-radius: 8px;
   padding: 0; /* Default padding */
   transition: transform 0.2s ease; /* Smooth hover effect */
   filter: drop-shadow(0 0 0.25rem rgb(0, 0, 0));
 }
 
+.term-card-image:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* New class for images on the left */
+.term-card-left {
+  display: flex;
+  flex-direction: row; /* Align image and text horizontally */
+  gap: 20px; /* Add space between the image and text */
+}
+
+.term-card-left .term-card-image-container {
+  flex: 0 0 auto; /* Prevent image from stretching */
+  max-width: 40%; /* Control the image container width */
+  display: flex;
+  align-items: center; /* Center the image vertically */
+  transition: transform 0.2s ease; /* Smooth hover effect */
+  filter: drop-shadow(0 0 0.25rem rgb(0, 0, 0));
+}
+
+.term-card-left .term-card-content {
+  flex: 1; /* Allow content to take up remaining space */
+}
+
 .term-card-dflag {
+
   background-size: cover; /* Ensure the image covers the entire card */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Prevent image repetition */
