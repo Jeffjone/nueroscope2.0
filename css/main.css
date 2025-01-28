@@ -890,7 +890,7 @@ strong {
 }
 
 .term-card-dflag {
-  background-image: url('images/flag.jpg'); /* Path to the flag image */
+  background-image: url('/images/flag.jpg'); /* Path to the flag image */
   background-size: cover; /* Ensure the image covers the entire card */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Prevent image repetition */
